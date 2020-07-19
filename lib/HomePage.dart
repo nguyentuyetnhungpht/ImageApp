@@ -39,38 +39,59 @@ class _HomePageState extends State<HomePage>
           )
         ),
       ),
-      body: StaggeredGridView.count(
-        crossAxisCount: 4,
-        children: List.generate
-        (5, 
-        (int i) {
-          return _Tile(i);
-          },
-        ),
-        staggeredTiles: List.generate(10, (int index){
-          return StaggeredTile.fit(4);
-        },
+      body: new ListView.builder(
+        itemBuilder: (context, index){
+          return new Padding(
+            padding: new EdgeInsets.symmetric(vertical:2.0, horizontal: 0.0),
+            child: new Card(
+              shape: new RoundedRectangleBorder(
+                borderRadius: new BorderRadius.circular(3.0),
+              ),
+              child: new Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  new ClipRRect(
+                    child: new Image.asset("assets/3.jpeg"),
+                     borderRadius: BorderRadius.only(
+                       topLeft: new Radius.circular(3.0),
+                       topRight: new Radius.circular(3.0),
+                     ),
+                  ),
+                  new Padding(
+                    padding: EdgeInsets.all(5.0),
+                    child: new Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                         new Row(
+                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                           children: <Widget>[
+                            CircleAvatar(
+                                radius: 17,
+                                backgroundImage: AssetImage('assets/2.jpeg')),
+                             new Expanded(child: new Text('   Rem'),),
+                            IconButton(
+                              icon: Icon(Icons.favorite_border),
+                              iconSize: 20.0,
+                              onPressed: () => print('Save post'),
+                            ),
+                            IconButton(
+                              icon: Icon(Icons.bookmark_border),
+                              iconSize: 20.0,
+                              onPressed: () => print('Save post'),
+                            ),
+                           ],
+                         ),
+                      ]
+                    ),)
+                
+                ]
+              ) 
+            ),);
+        }
       )
-    )
     );
   }
 }
 
-class _Tile extends StatelessWidget{
-
-  _Tile(this.i);
-  final int i;
-
-  @override
-  Widget build(BuildContext context){
-    return Container(
-      margin: EdgeInsets.all(10),
-      child: ClipRRect(
-        borderRadius: BorderRadius.all(
-          Radius.circular(5),
-        ),
-        child: Image.asset("assets/$i.jpeg"),
-      ),
-    );
-  }
-}
