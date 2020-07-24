@@ -19,14 +19,13 @@ class MyApp extends StatelessWidget {
   }
 }
 
-
 class MyBottomNavigationBar extends StatefulWidget {
   @override
   _MyBottomNavigationBarState createState() => _MyBottomNavigationBarState();
 }
 
 class _MyBottomNavigationBarState extends State<MyBottomNavigationBar>
-   with SingleTickerProviderStateMixin {
+    with SingleTickerProviderStateMixin {
   AnimationController _controller;
 
   int _currentIndex = 0;
@@ -38,14 +37,13 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar>
     UserPage(),
   ];
 
-  void onTappedBar(int index)
-  {
+  void onTappedBar(int index) {
     setState(() {
       _currentIndex = index;
     });
   }
 
-   @override
+  @override
   void initState() {
     super.initState();
     _controller = AnimationController(vsync: this);
@@ -59,38 +57,37 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar>
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold
-    (
-      body: _children[_currentIndex],
-      bottomNavigationBar: BottomNavigationBar
-      (
-        onTap: onTappedBar,
-        currentIndex:  _currentIndex,
-        items: 
-        [
-          BottomNavigationBarItem( 
-            icon: Icon(Icons.home),
-            title: Text("Home"),
-            backgroundColor: Colors.black
-          ),
-          BottomNavigationBarItem( 
-            icon:  Icon(Icons.list),
-            title:  Text("List"),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.file_upload),
-            title: Text("Upload")
+    return DefaultTabController(
+        length: 5,
+        initialIndex: 0,
+        child: Scaffold(
+            body: TabBarView(
+              children: _children,
             ),
-          BottomNavigationBarItem( 
-            icon:  Icon(Icons.notifications),
-            title:  Text("Notifications")
-          ),
-          BottomNavigationBarItem( 
-            icon:  Icon(Icons.verified_user),
-            title: Text("User")
-          ),
-        ],
-      )
-    );
+            bottomNavigationBar: Container(
+              margin: EdgeInsets.only(bottom: 20),
+              child: new TabBar(
+                tabs: [
+                  Tab(
+                    icon: Icon(Icons.home),
+                  ),
+                  Tab(
+                    icon: Icon(Icons.favorite_border),
+                  ),
+                  Tab(
+                    icon: Icon(Icons.file_upload),
+                  ),
+                  Tab(
+                    icon: Icon(Icons.notifications_none),
+                  ),
+                  Tab(
+                    icon: Icon(Icons.perm_identity),
+                  ),
+                ],
+                unselectedLabelColor: Colors.black,
+                labelColor: Colors.blue,
+                indicatorColor: Colors.transparent,
+              ),
+            )));
   }
 }
