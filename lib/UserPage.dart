@@ -1,4 +1,7 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 class UserPage extends StatefulWidget {
   @override
@@ -21,6 +24,43 @@ class _UserPageState extends State<UserPage>
     _controller.dispose();
   }
 
+   Container MyTopic(String imgVal){
+    return Container(
+                padding: EdgeInsets.all(3.0),
+                width: 200.0,
+                child: Image.asset(
+                  imgVal,
+                  fit: BoxFit.cover,),
+              );
+  }
+
+  // ignore: non_constant_identifier_names
+  Container Profile_info(String number, String title, double r, double l, double t ){
+    return Container(
+              margin: EdgeInsets.only(
+                right: r,
+                top: t,
+                left: l,
+              ),
+              child: Column(
+                children: <Widget>[
+                  Text(
+                    number,
+                    style: TextStyle(
+                        fontWeight: FontWeight.w500),
+                  ),
+                  Text(
+                    title, 
+                    style: TextStyle(
+                      fontSize: 12.0,
+                      fontWeight: FontWeight.w200, 
+                      color: Colors.blueGrey),
+                  )
+                ],
+              ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -28,176 +68,128 @@ class _UserPageState extends State<UserPage>
         child: Column(
           children: <Widget>[
             Container(
-              height: 100,
-              color: Colors.red,
-            ),
-            Container(
               constraints: BoxConstraints.expand(
-                  height: MediaQuery.of(context).size.height - 168),
+                  height: MediaQuery.of(context).size.height - 68),
               child: ListView(
                 padding: EdgeInsets.zero,
                 children: <Widget>[
                   Container(
-                    margin: EdgeInsets.all(20),
-                    height: 250,
+                    margin: new EdgeInsets.only(
+                      left: 10.0,
+                      right: 10.0,
+                      bottom: 10.0, 
+                      top: 30.0),
+                    height: 100,
                     child: Column(
                       children: <Widget>[
                         Row(
                           children: <Widget>[
                             Container(
-                                height: 50,
-                                width: 50,
+                                margin: new EdgeInsets.only(
+                                    left: 10.0, bottom: 10.0, top: 20.0),
+                                height: 60,
+                                width: 60,
                                 child: CircleAvatar(
                                     radius: 20,
                                     backgroundImage:
-                                        AssetImage('assets/2.jpeg'))),
+                                        AssetImage('assets/4.jpeg'))),
                             Column(
                               children: <Widget>[
                                 Row(
                                   children: <Widget>[
                                     Container(
-                                      margin:
-                                          EdgeInsets.only(left: 68, right: 20),
-                                      child: Column(
-                                        children: <Widget>[
-                                          Text(
-                                            '129',
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.bold),
-                                          ),
-                                          Text('posts')
-                                        ],
+                                      padding: EdgeInsets.only(
+                                          left: 10.0,
+                                          right: 60.0,
+                                          bottom: 10.0,
+                                          top: 20.0),
+                                      child: Text(
+                                        'Nhung Nguyen',
+                                        style: TextStyle(
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.bold),
                                       ),
                                     ),
                                     Container(
-                                      margin: EdgeInsets.only(right: 20),
-                                      child: Column(
-                                        children: <Widget>[
-                                          Text(
-                                            '129K',
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.bold),
-                                          ),
-                                          Text('followers')
-                                        ],
+                                      margin: EdgeInsets.only(
+                                        left: 70.0,
                                       ),
-                                    ),
-                                    Container(
-                                      margin: EdgeInsets.only(right: 20),
-                                      child: Column(
-                                        children: <Widget>[
-                                          Text(
-                                            '129',
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.bold),
-                                          ),
-                                          Text('following')
-                                        ],
+                                      height: 30,
+                                      child: Icon(
+                                        Icons.settings,
+                                        color: Colors.blueGrey,
+                                        size: 20.0,
                                       ),
                                     ),
                                   ],
                                 ),
                                 Row(
                                   children: <Widget>[
-                                    Container(
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(5)),
-                                        color: Colors.blue,
-                                      ),
-                                      margin: EdgeInsets.all(10),
-                                      width: 120,
-                                      height: 30,
-                                      child: FlatButton(
-                                        child: Text(
-                                          'Contact',
-                                          style: TextStyle(color: Colors.white),
-                                        ),
-                                        onPressed: () {},
-                                      ),
-                                    ),
-                                    Container(
-                                      margin: EdgeInsets.all(10),
-                                      height: 30,
-                                      width: 120,
-                                      decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.all(
-                                              Radius.circular(5)),
-                                          border: Border.all(
-                                              width: 1,
-                                              color: Color(0xFFE7E7E7))),
-                                      child: FlatButton(
-                                        child: Text('Edit Profile'),
-                                        onPressed: () {},
-                                      ),
-                                    ),
+                                    //right, left,top, bottom
+                                    Profile_info('227k', 'views', 30.0, 0.0, 10.0),
+                                    Profile_info('22k', '30-days rank',100.0, 0.0, 10.0,),
                                   ],
-                                )
+                                ),
                               ],
                             )
                           ],
                         ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: <Widget>[
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                Text("Nhung"),
-                                Text("I am a profile on instagram"),
-                                InkWell(
-                                  child: new Text('my instagram'),
-                                ),
-                              ],
-                            ),
-                            Container()
-                          ],
-                        )
                       ],
                     ),
-                    color: Colors.white,
                   ),
                   Container(
-                      height: 250,
-                      color: Colors.blue,
+                    height: 40,
+                    decoration: BoxDecoration(
+                              border: Border.all(
+                                  width: 1, color: Color(0xFFE7E7E7))
+                          ),
+                    child: Row(
+                      children: <Widget>[
+                        Container(
+                          height: 30,
+                          child: FlatButton(
+                            padding: EdgeInsets.zero,
+                            child: Text(
+                              'Media',
+                              style: TextStyle(color: Colors.black),
+                            ),
+                            onPressed: () {},
+                          ),
+                        ),
+                        Container(
+                          height: 30,
+                          child: FlatButton(
+                            padding: EdgeInsets.zero,
+                            child: Text(
+                              'Edit Profile',
+                              style: TextStyle(color: Colors.grey, fontWeight: FontWeight.w300)
+                            ),
+                            onPressed: () {},
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    color: Color.fromARGB(249,249,249,249),
+                      height: 470,
                       child: GridView.count(
                         primary: false,
-                        padding: const EdgeInsets.all(20),
-                        crossAxisSpacing: 10,
-                        mainAxisSpacing: 10,
-                        crossAxisCount: 2,
+                        padding: const EdgeInsets.all(5.0),
+                        crossAxisSpacing: 5.0,
+                        mainAxisSpacing: 5.0,
+                        crossAxisCount: 1,
                         children: <Widget>[
-                          Container(
-                            padding: const EdgeInsets.all(8),
-                            child:
-                                const Text("He'd have you all unravel at the"),
-                            color: Colors.teal[100],
-                          ),
-                          Container(
-                            padding: const EdgeInsets.all(8),
-                            child: const Text('Heed not the rabble'),
-                            color: Colors.teal[200],
-                          ),
-                          Container(
-                            padding: const EdgeInsets.all(8),
-                            child: const Text('Sound of screams but the'),
-                            color: Colors.teal[300],
-                          ),
-                          Container(
-                            padding: const EdgeInsets.all(8),
-                            child: const Text('Who scream'),
-                            color: Colors.teal[400],
-                          ),
-                          Container(
-                            padding: const EdgeInsets.all(8),
-                            child: const Text('Revolution is coming...'),
-                            color: Colors.teal[500],
-                          ),
-                          Container(
-                            padding: const EdgeInsets.all(8),
-                            child: const Text('Revolution, they...'),
-                            color: Colors.teal[600],
-                          ),
+                          MyTopic("assets/3.jpeg"),
+                          MyTopic("assets/1.jpeg"),
+                          MyTopic("assets/2.jpeg"),
+                          MyTopic("assets/3.jpeg"),
+                          MyTopic("assets/4.jpeg"),
+                          MyTopic("assets/5.jpeg"),
+                          MyTopic("assets/2.jpeg"),
+                          MyTopic("assets/1.jpeg"),
+                          MyTopic("assets/1.jpeg"),
+                          MyTopic("assets/1.jpeg"),
                         ],
                       )),
                   Column()
