@@ -40,7 +40,7 @@ class _ListPageState extends State<ListPage>
       padding: EdgeInsets.all(0.0),
       width: 220.0,
       child: Card(
-        child: Wrap(children: <Widget>[
+          child: Wrap(children: <Widget>[
         Image.asset(
           imgVal,
           fit: BoxFit.cover,
@@ -73,9 +73,14 @@ class _ListPageState extends State<ListPage>
           imgVal,
           fit: BoxFit.cover,
         ),
-        CircleAvatar(radius: 17, backgroundImage: AssetImage(avaVal)),
-        new Expanded(
-          child: new Text('   ' + name),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            CircleAvatar(radius: 17, backgroundImage: AssetImage(avaVal)),
+            new Expanded(
+              child: new Text('   ' + name),
+            ),
+          ],
         ),
       ])),
     );
@@ -86,19 +91,18 @@ class _ListPageState extends State<ListPage>
         height: 30,
         child: Row(children: <Widget>[
           Container(
-            height: 30,
-            padding: EdgeInsets.only(
-              top: 10.0,
-              left: 10.0,
-            ),
-            child: Text(
-              title,
-              style: TextStyle(
-                  color: Colors.grey,
-                  fontWeight: FontWeight.w500,
-                  fontSize: 14.0),
-            ),
-          )
+              height: 30,
+              padding: EdgeInsets.only(
+                top: 10.0,
+                left: 10.0,
+              ),
+              child: Text(
+                title,
+                style: TextStyle(
+                    color: Colors.grey,
+                    fontWeight: FontWeight.w500,
+                    fontSize: 14.0),
+              ))
         ]));
   }
 
@@ -147,7 +151,7 @@ class _ListPageState extends State<ListPage>
                           ],
                         ),
                       ),
-                      Title('Leaderboard'),
+                      Title('彡 Leaderboard'),
                       Container(
                           margin: EdgeInsets.only(
                               left: 10.0, right: 10.0, bottom: 10.0, top: 0.0),
@@ -160,7 +164,7 @@ class _ListPageState extends State<ListPage>
                                 Learder_board(
                                     "assets/3.jpeg", "assets/4.jpeg", "Rem"),
                               ])),
-                      Title('Challenge'),
+                      Title('★ Challenge'),
                       Container(
                           margin: EdgeInsets.only(
                               left: 10.0, right: 10.0, bottom: 10.0, top: 0.0),
@@ -173,7 +177,7 @@ class _ListPageState extends State<ListPage>
                                     Challenge(
                                         "assets/challenge.jpg",
                                         "What's On Your Desk?",
-                                        "5 days left · 200 cash prize"),
+                                        "5 days left ·  \$200 cash prize"),
                                   ]),
                                 ),
                               ])),
