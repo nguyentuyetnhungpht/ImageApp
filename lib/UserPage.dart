@@ -24,40 +24,41 @@ class _UserPageState extends State<UserPage>
     _controller.dispose();
   }
 
-   Container MyTopic(String imgVal){
+  Container MyTopic(String imgVal) {
     return Container(
-                padding: EdgeInsets.all(3.0),
-                width: 200.0,
-                child: Image.asset(
-                  imgVal,
-                  fit: BoxFit.cover,),
-              );
+      padding: EdgeInsets.all(3.0),
+      width: 200.0,
+      child: Image.asset(
+        imgVal,
+        fit: BoxFit.cover,
+      ),
+    );
   }
 
   // ignore: non_constant_identifier_names
-  Container Profile_info(String number, String title, double r, double l, double t ){
+  Container Profile_info(
+      String number, String title, double r, double l, double t) {
     return Container(
-              margin: EdgeInsets.only(
-                right: r,
-                top: t,
-                left: l,
-              ),
-              child: Column(
-                children: <Widget>[
-                  Text(
-                    number,
-                    style: TextStyle(
-                        fontWeight: FontWeight.w500),
-                  ),
-                  Text(
-                    title, 
-                    style: TextStyle(
-                      fontSize: 12.0,
-                      fontWeight: FontWeight.w200, 
-                      color: Colors.blueGrey),
-                  )
-                ],
-              ),
+      margin: EdgeInsets.only(
+        right: r,
+        top: t,
+        left: l,
+      ),
+      child: Column(
+        children: <Widget>[
+          Text(
+            number,
+            style: TextStyle(fontWeight: FontWeight.w500),
+          ),
+          Text(
+            title,
+            style: TextStyle(
+                fontSize: 12.0,
+                fontWeight: FontWeight.w200,
+                color: Colors.blueGrey),
+          )
+        ],
+      ),
     );
   }
 
@@ -75,10 +76,7 @@ class _UserPageState extends State<UserPage>
                 children: <Widget>[
                   Container(
                     margin: new EdgeInsets.only(
-                      left: 10.0,
-                      right: 10.0,
-                      bottom: 10.0, 
-                      top: 30.0),
+                        left: 10.0, right: 10.0, bottom: 10.0, top: 30.0),
                     height: 100,
                     child: Column(
                       children: <Widget>[
@@ -92,7 +90,8 @@ class _UserPageState extends State<UserPage>
                                 child: CircleAvatar(
                                     radius: 20,
                                     backgroundImage:
-                                        AssetImage('assets/4.jpeg'))),
+                                        AssetImage('assets/4.jpeg'))
+                            ),
                             Column(
                               children: <Widget>[
                                 Row(
@@ -126,8 +125,15 @@ class _UserPageState extends State<UserPage>
                                 Row(
                                   children: <Widget>[
                                     //right, left,top, bottom
-                                    Profile_info('227k', 'views', 30.0, 0.0, 10.0),
-                                    Profile_info('22k', '30-days rank',100.0, 0.0, 10.0,),
+                                    Profile_info(
+                                        '227k', 'views', 30.0, 0.0, 10.0),
+                                    Profile_info(
+                                      '22k',
+                                      '30-days rank',
+                                      100.0,
+                                      0.0,
+                                      10.0,
+                                    ),
                                   ],
                                 ),
                               ],
@@ -140,9 +146,7 @@ class _UserPageState extends State<UserPage>
                   Container(
                     height: 40,
                     decoration: BoxDecoration(
-                              border: Border.all(
-                                  width: 1, color: Color(0xFFE7E7E7))
-                          ),
+                        border: Border.all(width: 1, color: Color(0xFFE7E7E7))),
                     child: Row(
                       children: <Widget>[
                         Container(
@@ -160,10 +164,10 @@ class _UserPageState extends State<UserPage>
                           height: 30,
                           child: FlatButton(
                             padding: EdgeInsets.zero,
-                            child: Text(
-                              'Edit Profile',
-                              style: TextStyle(color: Colors.grey, fontWeight: FontWeight.w300)
-                            ),
+                            child: Text('Edit Profile',
+                                style: TextStyle(
+                                    color: Colors.grey,
+                                    fontWeight: FontWeight.w300)),
                             onPressed: () {},
                           ),
                         ),
@@ -171,7 +175,7 @@ class _UserPageState extends State<UserPage>
                     ),
                   ),
                   Container(
-                    color: Color.fromARGB(249,249,249,249),
+                      color: Color.fromARGB(225, 249, 249, 249),
                       height: 470,
                       child: GridView.count(
                         primary: false,
@@ -192,7 +196,6 @@ class _UserPageState extends State<UserPage>
                           MyTopic("assets/1.jpeg"),
                         ],
                       )),
-                  Column()
                 ],
               ),
             )

@@ -85,7 +85,7 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar>
                   ),
                 ],
                 unselectedLabelColor: Colors.black,
-                labelColor: Colors.blue,
+                labelColor: Color.fromARGB(225,5,160,129),
                 indicatorColor: Colors.transparent,
               ),
             )));

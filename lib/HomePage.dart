@@ -52,7 +52,8 @@ class _HomePageState extends State<HomePage>
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   new ClipRRect(
-                    child: new Image.asset("assets/3.jpeg"),
+                    child: new Image.asset("assets/5.jpeg", fit: BoxFit.cover,),
+                    
                      borderRadius: BorderRadius.only(
                        topLeft: new Radius.circular(3.0),
                        topRight: new Radius.circular(3.0),
@@ -69,7 +70,7 @@ class _HomePageState extends State<HomePage>
                            children: <Widget>[
                             CircleAvatar(
                                 radius: 17,
-                                backgroundImage: AssetImage('assets/2.jpeg')),
+                                backgroundImage: AssetImage('assets/1.jpeg')),
                              new Expanded(child: new Text('   Rem'),),
                             IconButton(
                               icon: Icon(Icons.favorite_border),
