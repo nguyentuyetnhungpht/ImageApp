@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import './UserPage.dart';
+import './ChallengeDetailPage.dart';
 class ListPage extends StatefulWidget {
   @override
   _ListPageState createState() => _ListPageState();
@@ -34,56 +35,68 @@ class _ListPageState extends State<ListPage>
   }
 
   // ignore: non_constant_identifier_names
-  Container Challenge(
+  InkWell Challenge(
       String imgVal, String title_challenge, String detail_challenge) {
-    return Container(
-      padding: EdgeInsets.all(0.0),
-      width: 220.0,
-      child: Card(
-          child: Wrap(children: <Widget>[
-        Image.asset(
-          imgVal,
-          fit: BoxFit.cover,
-        ),
-        ListTile(
-          contentPadding: EdgeInsets.only(
-            left: 5.0,
+    return InkWell(
+        onTap: () {
+          print("Container clicked");
+           Navigator.push(context, MaterialPageRoute(builder: (context)=> ChallengeDetailPage()));
+        },
+        child: Container(
+          padding: EdgeInsets.all(0.0),
+          width: 220.0,
+          child: Card(
+            child: Wrap(children: <Widget>[
+              Image.asset(
+                imgVal,
+                fit: BoxFit.cover,
+              ),
+              ListTile(
+                contentPadding: EdgeInsets.only(
+                  left: 5.0,
+                ),
+                title: Text(
+                  title_challenge,
+                  style: TextStyle(fontWeight: FontWeight.w500),
+                ),
+                subtitle: Text(
+                  detail_challenge,
+                  style: TextStyle(fontSize: 13.0),
+                ),
+              )
+            ]),
           ),
-          title: Text(
-            title_challenge,
-            style: TextStyle(fontWeight: FontWeight.w500),
-          ),
-          subtitle: Text(
-            detail_challenge,
-            style: TextStyle(fontSize: 13.0),
-          ),
-        )
-      ])),
-    );
+        ));
   }
 
   // ignore: non_constant_identifier_names
-  Container Learder_board(String imgVal, String avaVal, String name) {
-    return Container(
-      padding: EdgeInsets.all(0.0),
-      width: 200.0,
-      child: Card(
-          child: Wrap(children: <Widget>[
-        Image.asset(
-          imgVal,
-          fit: BoxFit.cover,
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            CircleAvatar(radius: 17, backgroundImage: AssetImage(avaVal)),
-            new Expanded(
-              child: new Text('   ' + name),
+  InkWell Learder_board(String imgVal, String avaVal, String name) {
+    return InkWell(
+        onTap: () {
+          //return UserPage();
+         // print("Container clicked");
+          Navigator.push(context, MaterialPageRoute(builder: (context)=> UserPage()));
+        },
+        child: Container(
+          padding: EdgeInsets.all(0.0),
+          width: 200.0,
+          child: Card(
+              child: Wrap(children: <Widget>[
+            Image.asset(
+              imgVal,
+              fit: BoxFit.cover,
             ),
-          ],
-        ),
-      ])),
-    );
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                CircleAvatar(radius: 17, backgroundImage: AssetImage(avaVal)),
+                new Expanded(
+                  child: new Text('   ' + name),
+                ),
+              ],
+            ),
+          ])),
+        ));
   }
 
   Container Title(String title) {
