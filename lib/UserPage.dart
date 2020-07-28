@@ -90,8 +90,7 @@ class _UserPageState extends State<UserPage>
                                 child: CircleAvatar(
                                     radius: 20,
                                     backgroundImage:
-                                        AssetImage('assets/4.jpeg'))
-                            ),
+                                        AssetImage('assets/11.jpg'))),
                             Column(
                               children: <Widget>[
                                 Row(
@@ -164,7 +163,7 @@ class _UserPageState extends State<UserPage>
                           height: 30,
                           child: FlatButton(
                             padding: EdgeInsets.zero,
-                            child: Text('Edit Profile',
+                            child: Text('Collections',
                                 style: TextStyle(
                                     color: Colors.grey,
                                     fontWeight: FontWeight.w300)),
@@ -184,7 +183,7 @@ class _UserPageState extends State<UserPage>
                         mainAxisSpacing: 5.0,
                         crossAxisCount: 1,
                         children: <Widget>[
-                          MyTopic("assets/3.jpeg"),
+                          MyTopic("assets/challenge.jpg"),
                           MyTopic("assets/1.jpeg"),
                           MyTopic("assets/2.jpeg"),
                           MyTopic("assets/3.jpeg"),

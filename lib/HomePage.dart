@@ -52,8 +52,7 @@ class _HomePageState extends State<HomePage>
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   new ClipRRect(
-                    child: new Image.asset("assets/5.jpeg", fit: BoxFit.cover,),
-                    
+                    child: new Image.asset("assets/inspirion.webp", fit: BoxFit.cover,),
                      borderRadius: BorderRadius.only(
                        topLeft: new Radius.circular(3.0),
                        topRight: new Radius.circular(3.0),
