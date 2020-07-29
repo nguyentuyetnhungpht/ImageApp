@@ -65,6 +65,21 @@ class _NotiPageState extends State<NotiPage>
     );
   }
 
+  Row Heading_Title(String title) {
+    return Row(children: <Widget>[
+      Container(
+        padding: EdgeInsets.only(left: 10.0, top: 50.0, bottom: 10.0),
+        child: Text(
+          title,
+          style: TextStyle(
+            fontSize: 20.0,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+      )
+    ]);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -163,6 +178,7 @@ class _NotiPageState extends State<NotiPage>
                               onPressed: () {},
                             ),
                           ),
+                          //Button Submit photo
                           Container(
                             margin: EdgeInsets.only(
                               top: 50.0,
@@ -211,19 +227,7 @@ class _NotiPageState extends State<NotiPage>
                       )),
                   Container(
                       child: Column(children: <Widget>[
-                    Row(children: <Widget>[
-                      Container(
-                        padding: EdgeInsets.only(
-                            left: 10.0, top: 50.0, bottom: 10.0),
-                        child: Text(
-                          "Challenge",
-                          style: TextStyle(
-                            fontSize: 20.0,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      )
-                    ]),
+                    Heading_Title("Challenge"),
                     Container(
                       padding: EdgeInsets.only(
                           left: 10.0, top: 10.0, bottom: 10.0, right: 10.0),
@@ -236,19 +240,7 @@ class _NotiPageState extends State<NotiPage>
                         ),
                       ),
                     ),
-                    Row(children: <Widget>[
-                      Container(
-                        padding: EdgeInsets.only(
-                            left: 10.0, top: 50.0, bottom: 20.0),
-                        child: Text(
-                          "Inspiration",
-                          style: TextStyle(
-                            fontSize: 20.0,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      )
-                    ]),
+                    Heading_Title("Inspiration"),
                     Column(
                       children: <Widget>[
                         Row(
