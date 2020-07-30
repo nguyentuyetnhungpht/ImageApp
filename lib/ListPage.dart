@@ -156,7 +156,7 @@ class _ListPageState extends State<ListPage>
                   child: ListView(
                     padding: EdgeInsets.zero,
                     children: <Widget>[
-                      Title('Challenge', '♜ '),
+                      Title('Challenge', '📷 '),
                       Container(
                           margin: EdgeInsets.only(
                               left: 10.0, right: 10.0, bottom: 10.0, top: 0.0),
@@ -179,7 +179,7 @@ class _ListPageState extends State<ListPage>
                                   ]),
                                 ),
                               ])),
-                      Title('Leaderboard', '★ '),
+                      Title('Trending photographers', '🔥 '),
                       Container(
                           margin: EdgeInsets.only(
                               left: 10.0, right: 10.0, bottom: 10.0, top: 0.0),
