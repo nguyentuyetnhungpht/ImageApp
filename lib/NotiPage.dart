@@ -246,7 +246,7 @@ class _NotiPageState extends State<NotiPage>
                         Row(
                           children: <Widget>[
                             MyTopic("assets/inspirion.webp"),
-                            MyTopic("assets/inspirion.webp"),
+                            MyTopic("assets/desk.jpg"),
                           ],
                         )
                       ],

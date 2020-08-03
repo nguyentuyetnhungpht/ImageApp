@@ -64,7 +64,7 @@ class _UserPageState extends State<UserPage>
 
   Container Profile_donate(String text, double r, double l, double t) {
     return Container(
-      margin: EdgeInsets.only(top: t, right:r, left: l),
+      margin: EdgeInsets.only(top: t, right: r, left: l),
       height: 30,
       width: 75,
       decoration: BoxDecoration(
@@ -159,14 +159,14 @@ class _UserPageState extends State<UserPage>
                         right: 10.0,
                         bottom: 10.0,
                       ),
-                      height: 130,
+                      height: 145,
                       child: Column(
                         children: <Widget>[
                           Row(
                             children: <Widget>[
                               Container(
                                   margin: new EdgeInsets.only(
-                                      left: 10.0, bottom: 20.0, top: 0.0),
+                                      left: 10.0, bottom: 40.0, top: 0.0, right: 10.0),
                                   height: 60,
                                   width: 60,
                                   child: CircleAvatar(
@@ -207,21 +207,97 @@ class _UserPageState extends State<UserPage>
                                     children: <Widget>[
                                       //right, left,top, bottom
                                       Profile_info(
-                                          '227k', 'views', 30.0, 0.0, 10.0),
+                                          '227k', 'views', 30.0, 0.0, 8.0),
                                       Profile_info(
                                         '22k',
                                         '30-days rank',
                                         100.0,
                                         0.0,
-                                        10.0,
+                                        8.0,
                                       ),
                                     ],
                                   ),
                                   Row(
                                     children: <Widget>[
+                                      Container(
+                                        padding: EdgeInsets.only(top:10.0, bottom:10.0, right: 170.0),
+                                         child: Row(
+                                            children: <Widget>[
+                                              Icon(
+                                                Icons.link,
+                                                color: Colors.blueGrey,
+                                                size: 11.0,
+                                              ),
+                                              Text(
+                                                " nhungntt",
+                                                style: TextStyle(
+                                                    color: Colors.blueGrey,
+                                                    fontSize: 11.0,
+                                                    fontWeight:
+                                                        FontWeight.w300),
+                                              ),
+                                            ],
+                                          ),
+                                      )
+                                    ],
+                                  ),
+                                  Row(
+                                    children: <Widget>[
                                       //right, left,top, bottom
-                                      Profile_donate(" Share", 20.0,5.0,10.0),
-                                      Profile_donate(" Donate",60.0,0,10.0),
+                                      Container(
+                                        margin: EdgeInsets.only(right: 10.0, top: 5.0),
+                                        width: 50.0,
+                                        height: 20.0,
+                                        child: RaisedButton(
+                                          color: Colors.white,
+                                          padding: EdgeInsets.only(left: 5.0),
+                                          onPressed: () {},
+                                          child: Row(
+                                            children: <Widget>[
+                                              Icon(
+                                                Icons.share,
+                                                color: Colors.blueGrey,
+                                                size: 8.0,
+                                              ),
+                                              Text(
+                                                " Share",
+                                                style: TextStyle(
+                                                    color: Colors.blueGrey,
+                                                    fontSize: 9.0,
+                                                    fontWeight:
+                                                        FontWeight.w600),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                      Container(
+                                        margin: EdgeInsets.only(right: 115.0, top: 5.0),
+                                        width: 50.0,
+                                        height: 20.0,
+                                        child: RaisedButton(
+                                          color: Colors.white,
+                                          padding: EdgeInsets.only(left: 5.0),
+                                          onPressed: () {},
+                                          child: Row(
+                                            children: <Widget>[
+                                              Icon(
+                                                Icons.donut_small,
+                                                color: Colors.blueGrey,
+                                                size: 8.0,
+                                              ),
+                                              Text(
+                                                " Donate",
+                                                style: TextStyle(
+                                                    color: Colors.blueGrey,
+                                                    fontSize: 9.0,
+                                                    fontWeight:
+                                                        FontWeight.w600),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
                                     ],
                                   ),
                                 ],

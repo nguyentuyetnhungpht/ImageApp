@@ -37,7 +37,7 @@ class _ListPageState extends State<ListPage>
 
   // ignore: non_constant_identifier_names
   InkWell Challenge(
-      String imgVal, String title_challenge, String detail_challenge) {
+      String imgVal1,String imgVal2,String imgVal3, String title_challenge, String detail_challenge,) {
     return InkWell(
         onTap: () {
           print("Container clicked");
@@ -49,13 +49,33 @@ class _ListPageState extends State<ListPage>
           width: 220.0,
           child: Card(
             child: Wrap(children: <Widget>[
-              Image.asset(
-                imgVal,
-                fit: BoxFit.cover,
+              Row(
+                children: <Widget>[
+                  Image.asset(
+                  imgVal1,
+                  width:212.0,
+                  height: 80,
+                  fit: BoxFit.cover,
+                ),
+                ],
+              ),
+              Row(children: <Widget>[
+                Image.asset(
+                  imgVal2,
+                  width:112.0,
+                  height: 60,
+                  fit: BoxFit.cover,
+                ),
+                Image.asset(
+                  imgVal3,
+                  width:100.0,
+                  height: 60,
+                  fit: BoxFit.cover,
+                ),],
               ),
               ListTile(
                 contentPadding: EdgeInsets.only(
-                  left: 5.0,
+                  left: 10.0,
                 ),
                 title: Text(
                   title_challenge,
@@ -177,14 +197,14 @@ class _ListPageState extends State<ListPage>
                                 Container(
                                   child: Row(children: <Widget>[
                                     Challenge(
-                                        "assets/challenge.jpg",
+                                        "assets/challenge.jpg","assets/desk.jpg","assets/inspirion.webp",
                                         "What's On Your Desk?",
                                         "5 days left ·  \$200 cash prize"),
                                     Challenge(
-                                        "assets/11.jpg",
-                                        "The Magic of Photo",
+                                        "assets/desk.jpg","assets/workhome1.jpeg", "assets/workhome2.jpeg",
+                                        "At Home",
                                         "3 days left ·  \$100 cash prize"),
-                                    Challenge("assets/4.jpeg", "Ocean Life",
+                                    Challenge("assets/0.jpeg","assets/1.jpeg","assets/4.jpeg","Ocean Life",
                                         "CLOSED ·  \$100 cash prize"),
                                   ]),
                                 ),
