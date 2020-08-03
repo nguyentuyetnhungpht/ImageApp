@@ -72,7 +72,7 @@ class _ListPageState extends State<ListPage>
   }
 
   // ignore: non_constant_identifier_names
-  InkWell Learder_board(String imgVal, String avaVal, String name) {
+  InkWell Learder_board(String imgVal, String avaVal, String name, String media_number) {
     return InkWell(
         onTap: () {
           //return UserPage();
@@ -82,7 +82,7 @@ class _ListPageState extends State<ListPage>
         },
         child: Container(
           padding: EdgeInsets.all(0.0),
-          width: 200.0,
+          width: 150.0,
           child: Card(
               child: Wrap(children: <Widget>[
             Image.asset(
@@ -95,11 +95,21 @@ class _ListPageState extends State<ListPage>
                 Container(
                   padding: EdgeInsets.only(top: 5.0, left: 5.0),
                   child: CircleAvatar(
-                      radius: 17, backgroundImage: AssetImage(avaVal)),
+                      radius: 15, backgroundImage: AssetImage(avaVal)),
                 ),
                 Container(
-                    padding: EdgeInsets.only(top: 5.0, left: 10.0),
-                    child: Text(name)),
+                    padding: EdgeInsets.only(top: 8.0, left: 10.0),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Text(name,textAlign: TextAlign.left,),
+                        Text(
+                          media_number,
+                          textAlign: TextAlign.start,
+                          style: TextStyle(fontSize: 10.0, fontWeight: FontWeight.w300)
+                        ),]
+                    )
+                )
               ],
             ),
           ])),
@@ -183,20 +193,20 @@ class _ListPageState extends State<ListPage>
                       Container(
                           margin: EdgeInsets.only(
                               left: 10.0, right: 10.0, bottom: 10.0, top: 0.0),
-                          height: 180.0,
+                          height: 150.0,
                           child: ListView(
                               scrollDirection: Axis.horizontal,
                               children: <Widget>[
                                 Learder_board(
-                                    "assets/3.jpeg", "assets/4.jpeg", "Rem"),
+                                    "assets/3.jpeg", "assets/4.jpeg", "Rem","20 Medias"),
                                 Learder_board("assets/11.jpg", "assets/2.jpeg",
-                                    "Hanamichi"),
+                                    "Hanamichi", "20 Medias"),
                                 Learder_board("assets/4.jpeg", "assets/1.jpeg",
-                                    "Nawniet"),
+                                    "Nawniet","20 Medias"),
                                 Learder_board(
-                                    "assets/11.jpg", "assets/2.jpeg", "Rem"),
+                                    "assets/11.jpg", "assets/2.jpeg", "Rem","20 Medias"),
                                 Learder_board(
-                                    "assets/3.jpeg", "assets/4.jpeg", "Rem"),
+                                    "assets/3.jpeg", "assets/4.jpeg", "Rem","20 Medias"),
                               ])),
                     ],
                   ),
