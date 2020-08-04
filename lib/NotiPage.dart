@@ -130,7 +130,7 @@ class _NotiPageState extends State<NotiPage>
                                       fontWeight: FontWeight.w400),
                                 ),
                                 Text(
-                                  'Pexel',
+                                  'UIT',
                                   style: TextStyle(
                                       color: Colors.red,
                                       fontSize: 13.0,
