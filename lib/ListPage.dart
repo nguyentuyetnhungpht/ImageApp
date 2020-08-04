@@ -146,17 +146,13 @@ class _ListPageState extends State<ListPage>
         child: Row(children: <Widget>[
           Text(
             icon_first,
-            style: TextStyle(
-                color: Colors.blueAccent,
-                fontWeight: FontWeight.w500,
-                fontSize: 14.0),
           ),
           Text(
             title,
             style: TextStyle(
-                color: Colors.grey,
+                color: Colors.black87,
                 fontWeight: FontWeight.w500,
-                fontSize: 14.0),
+                fontSize: 13.0),
           ),
         ]));
   }
@@ -218,15 +214,15 @@ class _ListPageState extends State<ListPage>
                               scrollDirection: Axis.horizontal,
                               children: <Widget>[
                                 Learder_board(
-                                    "assets/3.jpeg", "assets/4.jpeg", "Rem","20 Medias"),
+                                    "assets/3.jpeg", "assets/4.jpeg", "Nawnie","20 Medias"),
                                 Learder_board("assets/11.jpg", "assets/2.jpeg",
-                                    "Hanamichi", "20 Medias"),
+                                    "Akashi", "19 Medias"),
                                 Learder_board("assets/4.jpeg", "assets/1.jpeg",
-                                    "Nawniet","20 Medias"),
+                                    "Laviewi","17 Medias"),
                                 Learder_board(
-                                    "assets/11.jpg", "assets/2.jpeg", "Rem","20 Medias"),
+                                    "assets/11.jpg", "assets/2.jpeg", "Agileni","15 Medias"),
                                 Learder_board(
-                                    "assets/3.jpeg", "assets/4.jpeg", "Rem","20 Medias"),
+                                    "assets/3.jpeg", "assets/4.jpeg", "Yamam","10 Medias"),
                               ])),
                     ],
                   ),
