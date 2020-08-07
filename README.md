@@ -17,4 +17,4 @@ samples, guidance on mobile development, and a full API reference.
 
 # Screen
 
- <img src="https://imgur.com/FHVVbKH)">
+ <img src="https://i.imgur.com/FHVVbKH.jpg">
